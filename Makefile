@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/11/23 20:25:32 by joeduard         ###   ########.fr        #
+#    Updated: 2021/11/25 23:26:07 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
+
+bonus: all
 
 $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFLAGS) -o $@
