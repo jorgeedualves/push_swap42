@@ -6,20 +6,20 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/25 23:09:07 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/25 23:58:06 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_node	*new_node(int data)
+t_node *new_node(int data)
 {
-	t_node *node;
+	t_node *n;
 
-	node = (t_node *)malloc(sizeof(t_node));
-	node->data = data;
-	node->next = NULL;
-	return (node);
+	n = (t_node *)malloc(sizeof(t_node));
+	n->data = data;
+	n->next = NULL;
+	return (n);
 }
 
 void push(t_node **stack, t_node *new_node)
@@ -28,9 +28,9 @@ void push(t_node **stack, t_node *new_node)
 	*stack = new_node;
 }
 
-void print_stack(t_list *stack)
+void print_stack(t_node *stack)
 {
-	t_list *node;
+	t_node *node;
 
 	node = stack;
 	while (node->next != NULL)
@@ -43,18 +43,18 @@ void print_stack(t_list *stack)
 
 t_node *get_bottom_element(t_node *stack)
 {
-	if(stack == NULL)
+	if (stack == NULL)
 		return (0);
 	while (stack->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
 
-void append_to_stack (t_node **stack, t_node *new)
+void	append_to_stack(t_node **stack, t_node *new)
 {
 	t_node	*last;
 
-	last = get_bottom_element (*stack);
+	last = get_bottom_element(*stack);
 	if (last != NULL)
 		last->next = new;
 	else
@@ -64,21 +64,24 @@ void append_to_stack (t_node **stack, t_node *new)
 t_node	*rotate(t_node *stack)
 {
 	t_node *temp;
-
+	
 	temp = stack;
 	stack = stack->next;
-	append_to_stack (&stack, temp);
+	append_to_stack(&stack, temp);
 	temp->next = NULL;
 	return (stack);
 }
 
 int main(int argc, char **argv)
 {
-	t_list *stack = NULL;
-	t_list *node = NULL;
+	t_node *stack = NULL;
+	t_node *node = NULL;
 	int i;
 
 	i = 0;
+
+	// Se está ordenada
+	// Se existem duplicatas
 	if (argc >= 2)
 	{
 		while (argv[i])
@@ -90,6 +93,7 @@ int main(int argc, char **argv)
 			if (i == 1)
 				break ;
 		}
+		// print_stack(stack);
 		stack = rotate(stack);
 		print_stack(stack);
 	}
