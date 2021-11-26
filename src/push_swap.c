@@ -6,40 +6,28 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/24 17:10:22 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/25 23:09:07 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*int	main(int argc, char const **argv)
+t_node	*new_node(int data)
 {
-	t_list stack_a;
-	t_list new_node;
-	int 	i;
-	int		j;
+	t_node *node;
 
-	i = 0;
-	j = 1;
-	
-	if(agc == 2)
-		stack_a->content = ft_lstnew(*argv);
-	while (*argv)
-	{
-		if (j > 1)
-			stack_a->content = ft_lstadd_back(**argv, new_node);
-		argv++;
-		j++;
-	}
-	while (*stack)
-	{
-		printf("%c ", *stack);
-		stack++;
-	}
-	printf("\n");
-	return (0);
+	node = (t_node *)malloc(sizeof(t_node));
+	node->data = data;
+	node->next = NULL;
+	return (node);
 }
-*/
+
+void push(t_node **stack, t_node *new_node)
+{
+	new_node->next = *stack;
+	*stack = new_node;
+}
+
 void print_stack(t_list *stack)
 {
 	t_list *node;
@@ -47,10 +35,41 @@ void print_stack(t_list *stack)
 	node = stack;
 	while (node->next != NULL)
 	{
-		printf("%d\n", node->content);
+		printf("%d\n", node->data);
 		node = node->next;
 	}
-	printf("%d\n", node->content);
+	printf("%d\n", node->data);
+}
+
+t_node *get_bottom_element(t_node *stack)
+{
+	if(stack == NULL)
+		return (0);
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}
+
+void append_to_stack (t_node **stack, t_node *new)
+{
+	t_node	*last;
+
+	last = get_bottom_element (*stack);
+	if (last != NULL)
+		last->next = new;
+	else
+		*stack = new;
+}
+
+t_node	*rotate(t_node *stack)
+{
+	t_node *temp;
+
+	temp = stack;
+	stack = stack->next;
+	append_to_stack (&stack, temp);
+	temp->next = NULL;
+	return (stack);
 }
 
 int main(int argc, char **argv)
@@ -66,11 +85,12 @@ int main(int argc, char **argv)
 			i++;
 		while (argv[--i])
 		{
-			node = ft_lstnew(ft_atoi(argv[i]));
-			ft_lstadd_back(&stack, node);
+			node = new_node(ft_atoi(argv[i]));
+			push(&stack, node);
 			if (i == 1)
 				break ;
 		}
+		stack = rotate(stack);
 		print_stack(stack);
 	}
 	else
