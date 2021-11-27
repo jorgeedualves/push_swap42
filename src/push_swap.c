@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/25 23:58:06 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/27 12:56:45 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	append_to_stack(t_node **stack, t_node *new)
 		*stack = new;
 }
 
-t_node	*rotate(t_node *stack)
+void	*rotate(t_node *stack)
 {
 	t_node *temp;
 	
@@ -72,6 +72,22 @@ t_node	*rotate(t_node *stack)
 	return (stack);
 }
 
+t_node *reverse_rotate(t_node **stack)
+{
+	t_node *last;
+	t_node *temp;
+
+	temp = *stack;
+	last = get_bottom_element(temp);
+	while (temp->next !=NULL)
+	{
+		if(temp->next->next != NULL)
+			temp->next = NULL;
+		else
+			temp = temp->next;
+	}
+	push(stack, last);
+}
 int main(int argc, char **argv)
 {
 	t_node *stack = NULL;
