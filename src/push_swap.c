@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/27 12:56:45 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/27 13:00:25 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,17 @@ t_node *reverse_rotate(t_node **stack)
 	}
 	push(stack, last);
 }
+
+void	swap(t_node **stack)
+{
+	t_node *temp;
+	
+	temp = *stack;
+	*stack = (*stack)->next;
+	temp->next = (*stack)->next;
+	(*stack)->next = temp;
+}
+
 int main(int argc, char **argv)
 {
 	t_node *stack = NULL;
