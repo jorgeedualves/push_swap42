@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/25 23:13:57 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/27 14:13:14 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,20 @@
 
 typedef struct s_node
 {
-	int	data;
-	struct	s_node *next;
+    int data;
+    struct s_node *next;
 }t_node;
 
 typedef struct s_stack
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
+    t_node  *head;
+    int size;
 }t_stack;
 
-# endif
+typedef struct s_stacks
+{
+    t_stack *stack_a;
+    t_stack *stack_b;
+}t_stacks;
+
+#endif

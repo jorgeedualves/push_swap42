@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/27 13:00:25 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/27 13:15:24 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,17 @@ void	append_to_stack(t_node **stack, t_node *new)
 		*stack = new;
 }
 
-void	*rotate(t_node *stack)
+void	rotate(t_node **stack)
 {
 	t_node *temp;
 	
-	temp = stack;
-	stack = stack->next;
-	append_to_stack(&stack, temp);
+	temp = *stack;
+	*stack = (*stack)->next;
+	append_to_stack(&(*stack), temp);
 	temp->next = NULL;
-	return (stack);
 }
 
-t_node *reverse_rotate(t_node **stack)
+void reverse_rotate(t_node **stack)
 {
 	t_node *last;
 	t_node *temp;
@@ -81,7 +80,7 @@ t_node *reverse_rotate(t_node **stack)
 	last = get_bottom_element(temp);
 	while (temp->next !=NULL)
 	{
-		if(temp->next->next != NULL)
+		if(temp->next->next == NULL)
 			temp->next = NULL;
 		else
 			temp = temp->next;
@@ -116,12 +115,13 @@ int main(int argc, char **argv)
 		while (argv[--i])
 		{
 			node = new_node(ft_atoi(argv[i]));
-			push(&stack, node);
+		//	push(&stack, node);
+			reverse_rotate(&stack);
 			if (i == 1)
 				break ;
 		}
 		// print_stack(stack);
-		stack = rotate(stack);
+		swap(&stack);
 		print_stack(stack);
 	}
 	else
