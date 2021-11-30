@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/30 14:12:50 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:27:12 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ typedef struct s_stack
 
 typedef struct s_stacks
 {
-    t_stack *stack_a;
-    t_stack *stack_b;
+    t_stack stack_a;
+    t_stack stack_b;
 }t_stacks;
 
 // Push_Swap Actions

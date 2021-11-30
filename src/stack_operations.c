@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 23:26:02 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/29 23:30:23 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:38:46 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_node	*new_node(int data)
 	node = (t_node *)malloc(sizeof(t_node));
 	node->data = data;
 	node->next = NULL;
-	return (n);
+	return (node);
 }
 
 void	push_to_stack(t_node **stack, t_node *new_node)
