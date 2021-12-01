@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 23:07:38 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/29 23:09:33 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/30 23:21:42 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void swap(t_node **stack)
 void push_b(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node *temp;
-
-	temp = stack_a->head;
-	stack_a->head = stack_a->head->next;
-	push_to_stack(&stack_b->head, temp);
+											//  TEMP -> head(A) -> 1
+	temp = stack_a->head;					//	 1 ->  2 ->  3 ->  4 ->  5 -> NULL 
+	stack_a->head = stack_a->head->next;	//	head ->  2 ->  3 ->  4 ->  5 -> NULL 
+	push_to_stack(&stack_b->head, temp);	//  head (B) -> 1
 }
 
 

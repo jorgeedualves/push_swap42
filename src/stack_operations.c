@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 23:26:02 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/30 14:38:46 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/11/30 23:21:34 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_node	*new_node(int data)
 }
 
 void	push_to_stack(t_node **stack, t_node *new_node)
-{
-	new_node->next = *stack;
-	*stack = new_node;
+{							 //  head = NULL				head(B) -> NULL
+	new_node->next = *stack; //   5 -> NULL					TEMP(1) -> head(B) = NULL
+	*stack = new_node;       //   head -> 5 -> NULL			head(TEMP) -> 1 -> NULL
 }
 
 void	print_stack(t_node *stack)
