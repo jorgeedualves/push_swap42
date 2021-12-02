@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/11/30 14:42:21 by joeduard         ###   ########.fr        #
+#    Updated: 2021/12/01 17:07:19 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ LIBFLAGS = -L$(LIBFT_DIR) -lft
 
 RM = rm -f
 
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
