@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/30 14:27:12 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/03 13:30:18 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	print_stack(t_node *stack);
 t_node	*get_bottom_element(t_node *stack);
 void	append_to_stack(t_node **stack, t_node *new);
 
+void	sort_stack(t_stacks *stack);
 
 
 #endif

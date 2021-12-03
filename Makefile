@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/12/01 17:07:19 by joeduard         ###   ########.fr        #
+#    Updated: 2021/12/03 14:03:01 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ NAME = push_swap
 
 SRC_DIR = src
 INCLUDES = includes
-HEADERS = $(INCLUDES)/push_swap.h
-INCLUDES := $(addprefix -I, $(HEADERS))
+HEADERS := $(INCLUDES)/push_swap.h
+INCLUDES := $(addprefix -I, $(INCLUDES))
+
 
 SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c
 
@@ -42,7 +43,7 @@ $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFLAGS) -o $@
 	@echo "\033[32mDone!\033[0m"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c includes
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
