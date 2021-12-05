@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/30 14:56:04 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/05 18:10:25 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,31 +33,35 @@ int main(int argc, char **argv)
 		while (argv[--i])
 		{
 			node = new_node(ft_atoi(argv[i]));
-			push_to_stack(&stacks.stack_a.head, node);
+			push_to_stack(&stacks.stack_a->head, node);
 			if (i == 1)
 				break ;	
 		}
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
-		do_print_rrr(&stacks);
-		printf("---------------------------\n");
-		print_stack(stacks.stack_a.head);
+		
+		  // do print_actions:
+		// do_print_pa(&stacks);
+		// do_print_pb(&stacks);
+		// do_print_ra(&stacks);
+		// do_print_rb(&stacks);
+		// do_print_rr(&stacks);
+		// do_print_rra(&stacks);
+		// do_print_rrb(&stacks);
+		// do_print_rrr(&stacks);
+		
+		 // actions:
+		// rotate(&stacks.stack_a->head);
+		// reverse_rotate(&stacks.stack_a->head);
+		// push_a(&(*stacks.stack_a), &(*stacks.stack_b));
+		// push_b(&(*stacks.stack_a), &(*stacks.stack_b));
+		// swap(&stacks.stack_a->head);
 
-		// printf("---------------------------\n");
-		// push_a(&stacks.stack_a, &stacks.stack_b);
-		// print_stack(stacks.stack_b.head);
-		// print_stack(stacks.stack_b.head);
-		// push(stack_a, stack_b);
-		// print_stack(stack_a->head);
-		// puts("\n");
-		// print_stack(stack_b->head);
+		printf("---------------------------\n");
+		// print_stack(stacks.stack_a->head);		
 	}
 	else
 	{
 		ft_putstr_fd("Error:\n", 1);
 		ft_putstr_fd("	Too few arguments provided!", 1);
 	}
-
 	return (0);
 }
