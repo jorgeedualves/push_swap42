@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/06 11:58:59 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/07 12:32:56 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		while (argv[--i])
 		{
 			node = new_node(ft_atoi(argv[i]));
-			push_to_stack(&stacks.stack_a->head, node);
+			push_to_stack(&stacks.stack_a.head, node);
 			if (i == 1)
 				break ;	
 		}
