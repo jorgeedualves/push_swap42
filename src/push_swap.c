@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/08 00:14:14 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/08 17:24:43 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 		{
 			node = new_node(ft_atoi(argv[i]));
 			push_to_stack(&stacks.stack_a.head, node);
+			stacks.stack_a.size++;
 			if (i == 1)
 				break ;	
 		}
@@ -58,7 +59,8 @@ int main(int argc, char **argv)
 		printf("---------------------------\n");
 		print_stacks(&stacks.stack_a, &stacks.stack_b);
 		sort_stacks(&stacks);
-		min_max(&stacks.stack_a);	
+		min_max(&stacks.stack_a);
+		print_stacks(&stacks.stack_a, &stacks.stack_b);	
 	}
 	else
 	{

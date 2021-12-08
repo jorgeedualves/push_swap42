@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 23:16:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 23:21:54 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/08 17:46:32 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	do_print_ss(t_stacks *stack)
 
 void	do_print_ra(t_stacks *stack)
 {
-	reverse_rotate(&stack->stack_a.head);
+	rotate(&stack->stack_a.head);
 	write(1, "ra\n", 3);
 }
 
