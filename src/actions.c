@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 23:07:38 by joeduard          #+#    #+#             */
-/*   Updated: 2021/11/30 23:21:42 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/07 23:15:28 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,21 @@ void swap(t_node **stack)
 	(*stack)->next = temp;
 }
 
-void push_b(t_stack *stack_a, t_stack *stack_b)
+void push_b(t_stacks *stack)
 {
 	t_node *temp;
 											//  TEMP -> head(A) -> 1
-	temp = stack_a->head;					//	 1 ->  2 ->  3 ->  4 ->  5 -> NULL 
-	stack_a->head = stack_a->head->next;	//	head ->  2 ->  3 ->  4 ->  5 -> NULL 
-	push_to_stack(&stack_b->head, temp);	//  head (B) -> 1
+	temp = stack->stack_a.head;					//	 1 ->  2 ->  3 ->  4 ->  5 -> NULL 
+	stack->stack_a.head = stack->stack_a.head->next;	//	head ->  2 ->  3 ->  4 ->  5 -> NULL 
+	push_to_stack(&stack->stack_b.head, temp);	//  head (B) -> 1
 }
 
 
-void push_a(t_stack *stack_a, t_stack *stack_b)
+void push_a(t_stacks *stack)
 {
 	t_node *temp;
 
-	temp = stack_b->head;
-	stack_b->head = stack_b->head->next;
-	push_to_stack(&stack_a->head, temp);
+	temp = stack->stack_b.head;
+	stack->stack_b.head = stack->stack_b.head->next;
+	push_to_stack(&stack->stack_a.head, temp);
 }
