@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 14:49:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 12:33:50 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/07 23:34:52 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    sort_two(t_stacks *stack)       // Chamada
 {
-    if (stack->stack_a.head->data > stack->stack_a.head->next->data)
+    if (stack->stack_a.head > stack->stack_a.head->next->data)
         do_print_sa(stack);
     else
         return ;
@@ -52,10 +52,46 @@ void    sort_three(t_stacks *stack)
         return ;
 }
 
-// void    sort_five(t_stacks *stack)
+void    sort_five(t_stacks *stack)
+{
+    if (stack->stack_a.size == 4)
+	{
+		do_print_pb(stack);
+		sort_three(stack);
+	}
+	if (stack->stack_a.size == 5)
+	{
+		do_print_pb(stack);
+		do_print_pb(stack);
+		sort_three(stack);
+		sort_two(stack);
+		do_print_pa(stack);
+		do_print_pa(stack);
+	}
+
+}
+
+// void    sort_one_hundler (t_stacks *stack)
 // {
 
 // }
+
+// void    sort_five_hundler (t_stacks *stack)
+// {
+    
+// }
+
+        // ordenar Pilha
+void	sort_stacks(t_stacks *stack)
+{
+    if (stack->stack_a.size == 1)
+        return;
+    if (stack->stack_a.size == 2)
+         sort_two(stack);   
+    if (stack->stack_a.size == 3)
+         sort_three(stack);
+
+}
 
 // void    sort_one_hundler (t_stacks *stack)
 // {
