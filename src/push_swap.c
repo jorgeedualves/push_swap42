@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 20:21:23 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 12:32:56 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/08 00:14:14 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ int main(int argc, char **argv)
 		// swap(&stacks.stack_a->head);
 
 		printf("---------------------------\n");
-		// print_stack(stacks.stack_a->head);		
+		print_stacks(&stacks.stack_a, &stacks.stack_b);
+		sort_stacks(&stacks);
+		min_max(&stacks.stack_a);	
 	}
 	else
 	{

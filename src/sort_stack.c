@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 14:49:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 23:34:52 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/08 00:21:01 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void    sort_two(t_stacks *stack)       // Chamada
 {
-    if (stack->stack_a.head > stack->stack_a.head->next->data)
+    if (stack->stack_a.head->data > stack->stack_a.head->next->data)
         do_print_sa(stack);
-    else
-        return ;
     return ;
 }
 
