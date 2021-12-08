@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 12:08:12 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/07 22:58:05 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ typedef struct s_stacks
 void	rotate(t_node **stack);
 void	reverse_rotate(t_node **stack);
 void	swap(t_node **stack);
-void	push_b(t_stack *stack_a, t_stack *stack_b);
-void	push_a(t_stack *stack_a, t_stack *stack_b);
+void	push_a(t_stacks *stack);
+void	push_b(t_stacks *stack);
 
 // Call and print actions
 void	do_print_sa(t_stacks *stack);
@@ -69,5 +69,10 @@ t_node	*get_bottom_element(t_node *stack);
 void	append_to_stack(t_node **stack, t_node *new);
 int		stack_size(t_stack stack);
 void	min_max(t_stack *stack_a);
+
+void	sort_stacks(t_stacks *stack);
+void    sort_two(t_stacks *stack);
+void    sort_three(t_stacks *stack);
+void	sort_five(t_stacks *stack);
 
 #endif
