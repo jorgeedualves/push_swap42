@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 23:16:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 12:28:42 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/07 23:21:54 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ void	do_print_rrr(t_stacks *stack)
 
 void	do_print_pa(t_stacks *stack)
 {
-	push_a(&stack->stack_a, &stack->stack_b);
+	push_a(stack);
 	write(1, "pa\n", 3);
 }
 
 void	do_print_pb(t_stacks *stack)
 {
-	push_b(&stack->stack_a, &stack->stack_b);
+	push_b(stack);
 	write(1, "pb\n", 3);
 }
