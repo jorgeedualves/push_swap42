@@ -5,30 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 14:49:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/08 18:42:50 by joeduard         ###   ########.fr       */
+/*   Created: 2021/12/10 20:24:26 by joeduard          #+#    #+#             */
+/*   Updated: 2021/12/10 20:25:23 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    sort_two(t_stacks *stack)       // Chamada
+void    sort_two(t_stacks *stack)
 {
-    if (stack->stack_a.head->data > stack->stack_a.head->next->data)
+    if (stack->stack_a->head->data > stack->stack_a->head->next->data)
         do_print_sa(stack);
     return ;
 }
 
-    // Ordenar três
 void    sort_three(t_stacks *stack)
 {
-    int first;
-    int second;
-    int third;
+    char *first;
+    char *second;
+    char *third;
 
-    first = stack->stack_a.head->data;
-    second = stack->stack_a.head->next->data;
-    third = stack->stack_a.head->next->next->data;
+    first = stack->stack_a->head->data;
+    second = stack->stack_a->head->next->data;
+    third = stack->stack_a->head->next->next->data;
 
 	if (first > second && second > third && first > third)
 	{
@@ -52,12 +51,12 @@ void    sort_three(t_stacks *stack)
 
 void    sort_five(t_stacks *stack)
 {
-    if (stack->stack_a.size == 4)
+	if (stack->stack_a->size == 4)
 	{
 		do_print_pb(stack);
 		sort_three(stack);
 	}
-	if (stack->stack_a.size == 5)
+	if (stack->stack_a->size == 5)
 	{
 		do_print_pb(stack);
 		do_print_pb(stack);
@@ -69,54 +68,12 @@ void    sort_five(t_stacks *stack)
 
 }
 
-// void    sort_one_hundler (t_stacks *stack)
-// {
-
-// }
-
-// void    sort_five_hundler (t_stacks *stack)
-// {
-    
-// }
-
-        // ordenar Pilha
 void	sort_stacks(t_stacks *stack)
 {
-    if (stack->stack_a.size == 1)
+    if (stack->stack_a->size == 1)
         return;
-    if (stack->stack_a.size == 2)
+    if (stack->stack_a->size == 2)
          sort_two(stack);   
-    if (stack->stack_a.size == 3)
+    if (stack->stack_a->size == 3)
          sort_three(stack);
-
-}
-
-// void    sort_one_hundler (t_stacks *stack)
-// {
-
-// }
-
-// void    sort_five_hundler (t_stacks *stack)
-// {
-    
-// }
-
-        // ordenar Pilha
-void    sort_stack(t_stacks *stack)
-{
-    if (stack->stack_a.size == 1)
-        return;
-    if (stack->stack_a.size == 2)
-         sort_two(stack);
-    if (stack->stack_a.size == 3)
-         sort_three(stack);
-    // if (stack->stack_a.size > 3 && stack->stack_a.size <= 5)
-    //     sort_five (stack);
-    // if (stack->stack_a.size > 5 && stack->stack_a.size <= 100)
-    //     sort_one_hundler(stack);
-    // if (stack->stack_a.size > 100)
-    //     sort_five_hundler(stack);
-    // if (stack->stack_a.size > 3 && stack->stack_a.size < 6)
-    //     sort_five(stack);
-   
 }

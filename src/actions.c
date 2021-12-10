@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 23:07:38 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/07 23:15:28 by joeduard         ###   ########.fr       */
+/*   Created: 2021/12/10 20:12:58 by joeduard          #+#    #+#             */
+/*   Updated: 2021/12/10 20:16:38 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 void rotate(t_node **stack)
 {
 	t_node *temp;
-	
-	temp = *stack;
+	temp = *stack;		
 	*stack = (*stack)->next;
 	append_to_stack(&(*stack), temp);
 	temp->next = NULL;
@@ -46,24 +45,23 @@ void swap(t_node **stack)
 	temp = *stack;
 	*stack = (*stack)->next;
 	temp->next = (*stack)->next;
-	(*stack)->next = temp;
-}
+ 	(*stack)->next = temp;
+ }
 
 void push_b(t_stacks *stack)
 {
 	t_node *temp;
-											//  TEMP -> head(A) -> 1
-	temp = stack->stack_a.head;					//	 1 ->  2 ->  3 ->  4 ->  5 -> NULL 
-	stack->stack_a.head = stack->stack_a.head->next;	//	head ->  2 ->  3 ->  4 ->  5 -> NULL 
-	push_to_stack(&stack->stack_b.head, temp);	//  head (B) -> 1
-}
 
+	temp = stack->stack_a->head;
+	stack->stack_a->head = stack->stack_a->head->next;
+	push_to_stack(&stack->stack_b->head, temp);
+}
 
 void push_a(t_stacks *stack)
 {
 	t_node *temp;
 
-	temp = stack->stack_b.head;
-	stack->stack_b.head = stack->stack_b.head->next;
-	push_to_stack(&stack->stack_a.head, temp);
+	temp = stack->stack_b->head;
+	stack->stack_b->head = stack->stack_b->head->next;
+	push_to_stack(&stack->stack_a->head, temp);
 }

@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/12/06 10:13:47 by joeduard         ###   ########.fr        #
+#    Updated: 2021/12/10 20:17:45 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ HEADERS := $(INCLUDES)/push_swap.h
 INCLUDES := $(addprefix -I, $(INCLUDES))
 
 
-SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c sort_stack.c
+SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c sort_stack.c \
+			check_args.c quick_sort.c exit.c ps_lst.c push_swap_long.c push_swap_short.c \
+			
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -32,7 +34,8 @@ LIBFLAGS = -L$(LIBFT_DIR) -lft
 RM = rm -f
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+VALGRIND = valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes  
 
 all: $(NAME)
 
@@ -51,6 +54,9 @@ $(LIBFT):
 
 $(OBJ_DIR):
 	mkdir -p obj
+
+run: all
+	$(VALGRIND) ./$(NAME) 1 2 3 4 5
 
 clean:
 	make -C $(LIBFT_DIR) fclean
