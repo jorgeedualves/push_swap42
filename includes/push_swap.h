@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/10 20:18:11 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/13 17:59:29 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdbool.h>
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -82,7 +83,7 @@ void	sort_five(t_stacks *stack);
 int		validate_args(int argc, char **argv);
 int		is_integer(char *argv);
 void	check_duplicates(int argc, int *num);
-int		array_is_sorted(int argc, int *num);
+void	array_is_sorted(int argc, int *num);
 void	transform_args(int argc, char **argv, int *num);
 
 char	*ft_itob(int len, int num);
@@ -99,6 +100,10 @@ void	ps_lstdelone(t_stack *lst, void (*del)(void *));
 t_stack	*ps_lstprevlast(t_stack *lst);
 void	ps_lstadd_front(t_stack **lst, t_stack *new);
 
+void	ps_lstclear(t_stack **lst);
+void	freeing(t_stacks *stacks, int *num, int *index, char **bin);
+void	exit_error(void);
+
 int		*quick_sort(int len, int *num);
 int		*get_index(int len, int *num, int *cpy);
 int		*link_index(int len, int *num);
@@ -106,9 +111,5 @@ int		*link_index(int len, int *num);
 void	push_swap(t_stacks *stacks, int *index);
 void	short_push_swap(t_stacks *stacks, int *index);
 void	long_push_swap(t_stacks *stacks);
-
-void	ps_lstclear(t_stack **lst);
-void	freeing(t_stacks *stacks, int *num, int *index, char **bin);
-void	exit_error(void);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/12/10 20:17:45 by joeduard         ###   ########.fr        #
+#    Updated: 2021/12/13 12:43:09 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ HEADERS := $(INCLUDES)/push_swap.h
 INCLUDES := $(addprefix -I, $(INCLUDES))
 
 
-SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c sort_stack.c \
-			check_args.c quick_sort.c exit.c ps_lst.c push_swap_long.c push_swap_short.c \
+SRC_FILES = actions.c check_args.c do_print_actions.c exit.c ft_itob.c \
+			is_integer.c ps_lst.c push_swap_long.c push_swap_short.c push_swap.c \
+			quick_sort.c sort_stack.c stack_operations.c \
 			
-
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 OBJ_DIR = obj

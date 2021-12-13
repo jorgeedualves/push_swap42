@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:24:19 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/10 20:24:21 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/13 18:03:37 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	*quick_sort(int len, int *num)
 	int	*cpy;
 	int	aux;
 	int	i;
+	printf("\nFUNCAO QUICK SORT\n");
 
 	cpy = cpy_vector(len, num);
 	i = 0;
@@ -74,7 +75,7 @@ int	*link_index(int len, int *num)
 {
 	int	*cpy;
 	int	*index;
-
+	printf("\nFUNCAO LINK_INDEX\n");
 	cpy = quick_sort(len, num);
 	index = get_index(len, num, cpy);
 	free(cpy);
