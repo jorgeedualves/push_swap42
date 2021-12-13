@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:23:21 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/13 18:45:57 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/13 19:27:32 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,20 @@ int main(int argc, char **argv)
 	printf("\nDEPOIS DO BIN\n");
 	
 	printf("\nANTES DA INIT_STRUCT\n");
-	init_struct(&stacks, argc);			
+	init_struct(&stacks, argc);			// ok			
 	printf("\nDEPOIS DA INIT_STRUCT\n");
 
 	printf("\nANTES DA FILL STACK A\n");
-	fill_stack_a(&stacks, bin, index);		// ok
+	fill_stack_a(&stacks, bin, index);
 	printf("\nDEPOIS DA FILL STACK A\n");
 	
 	printf("\nANTES DA PUSH SWAP\n");
 	push_swap(&stacks, index);
 	printf("\nDEPOIS DA PUSH SWAP\n");
 	
+	printf("\nANTES DO FREEING\n");
 	freeing(&stacks, num, index, bin);
+	printf("\n\nFIM\n\n");
 
 	 printf("---------------------------\n");	
 //	print_stacks(stacks.stack_a, stacks.stack_b);
@@ -73,13 +75,13 @@ void	fill_stack_a(t_stacks *stacks, char **bin, int *index)
 	if(stacks->len)
 	{
 		i = 0;
-		stacks->stack_a = ps_lstnew(bin[i], index[i]);
+		stacks->stack_a->head = ps_lstnew(bin[i], index[i]);
 		printf("\nANTES DO WHILE\n");
 		while (i < stacks->len - 1)
 		{
 			i++;
-			printf("\nENTRA EM ADD BACK\n");
-			ps_lstadd_back(&stacks->stack_a, ps_lstnew(bin[i], index[i]));
+			printf("\nENTRAR EM ADD BACK\n");
+			ps_lstadd_back(&stacks->stack_a->head, ps_lstnew(bin[i], index[i]));
 		}
 	}
 }
@@ -87,7 +89,7 @@ void	fill_stack_a(t_stacks *stacks, char **bin, int *index)
 void push_swap (t_stacks *stacks, int *index)
 {
 	printf("\nFUNÇAO PUSH_SWAP\n");
-	if(stacks->stack_a->size <= 5)
+	if(stacks->len <= 5)
 		short_push_swap(stacks, index);
 	else
 		long_push_swap(stacks);

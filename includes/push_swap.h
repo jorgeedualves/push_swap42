@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/13 17:59:29 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/13 19:03:15 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,12 @@ int		find_limit(int len);
 void	init_struct(t_stacks *stacks, int argc);
 void	fill_stack_a(t_stacks *stacks, char **bin, int *index);
 
-t_stack	*ps_lstnew(char *bin, int index);
-void	ps_lstadd_back(t_stack **lst, t_stack *next);
-t_stack	*ps_lstlast(t_stack *lst);
-void	ps_lstdelone(t_stack *lst, void (*del)(void *));
-t_stack	*ps_lstprevlast(t_stack *lst);
-void	ps_lstadd_front(t_stack **lst, t_stack *new);
+t_node	*ps_lstnew(char *bin, int index);
+void	ps_lstadd_back(t_node **lst, t_node *next);
+t_node	*ps_lstlast(t_node *lst);
+void	ps_lstdelone(t_node *lst, void (*del)(void *));
+t_node	*ps_lstprevlast(t_node *lst);
+void	ps_lstadd_front(t_node **lst, t_node *new);
 
 void	ps_lstclear(t_stack **lst);
 void	freeing(t_stacks *stacks, int *num, int *index, char **bin);

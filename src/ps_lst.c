@@ -6,67 +6,70 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:21:57 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/13 18:32:06 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/13 19:01:12 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*ps_lstnew(char *bin, int index)
+t_node	*ps_lstnew(char *bin, int index)
 {
 	printf("\nFUNÇAO PS LSTNEW\n");
-	t_stack		*node;
-    node = (t_stack *)malloc(sizeof(t_stack));
+	t_node		*node;
+    node = (t_node *)malloc(sizeof(t_node));
 	if(node == NULL)
 	{
 		printf("\nFUNÇAO LSTNEW DEU RUIM NO MALLOC\n");
 		exit(EXIT_FAILURE);
 	}
 	printf("\nFUNÇAO LSTNEW ANTES DE ATRIBUIR BIN E INDEX\n");
-	node->head->data = bin;
+	node->data = bin;
+	
 	printf("\natribuiu para o bin\n");
-	node->head->index = index;
+	node->index = index;
+	
 	printf("\natribuiu para o index\n");
-	node->head->next = NULL;
+	node->next = NULL;
+	
 	printf("\natribuiu para o next\n");
 	printf("\nFUNÇAO lstnew retorno\n");
 	return (node);
 }
 
-t_stack	*ps_lstlast(t_stack *lst)
+t_node	*ps_lstlast(t_node *lst)
 {
 	printf("\nFUNÇAO PS_LSTLAST\n");
 	if (lst == 0)
 		return (0);
-	while (lst->head->next != 0)
-		lst->head = lst->head->next;
+	while (lst->next != 0)
+		lst = lst->next;
 	return (lst);
 }
 
-void	ps_lstadd_back(t_stack **lst, t_stack *next)
+void	ps_lstadd_back(t_node **lst, t_node *next)
 {
-	t_stack	*last;
+	t_node	*last;
 
 	printf("\nFUNÇAO PS_LSTADD\n");
 
 	last = ps_lstlast(*lst);
 	if (last != 0)
-		last = next;
+		last->next = next;
 	else
 		*lst = next;
 }
 
-t_stack	*ps_lstprevlast(t_stack *lst)
+t_node	*ps_lstprevlast(t_node *lst)
 {
 	printf("\nFUNÇAO PS_LSTPREVLAST\n");
 	if (lst == 0)
 		return (0);
-	while (lst->head->next->next != 0)
-		lst->head = lst->head->next->next;
+	while (lst->next->next != 0)
+		lst = lst->next;
 	return (lst);
 }
 
-void	ps_lstadd_front(t_stack **lst, t_stack *new)
+void	ps_lstadd_front(t_node **lst, t_node *new)
 {
 	printf("\nFUNÇAO LSTADD_FRONT\n");
 	new = *lst;
