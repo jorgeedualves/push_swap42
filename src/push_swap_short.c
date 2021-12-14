@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:22:18 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 14:57:13 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:15:38 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	short_push_swap(t_stacks *stack, int *index)
 	{
 		if (index[5] == 0)
 			reverse_rotate(stack);
-		while (stack->stack_a->index != 0) //  5 4 3 2 1 
+		while (stack->stack_a->index != 0)
 			rotate(stack);
 		push_b(stack);
 		if (stack->len == 5)

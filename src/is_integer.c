@@ -6,23 +6,22 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:39:47 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 18:06:14 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:15:12 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-# include<stdbool.h>
 
 static int	check_is_digit(char *argv)
 {
 	if (argv[0] == '-' && !ft_isdigit(argv[1]))
-		EXIT_FAILURE;
+		exit_error();
 	if (argv[0] == '-' && argv[1] == '\0')
-		EXIT_FAILURE;
+		exit_error();
 	if (argv[0] != '-' && !ft_isdigit(argv[0]))
-		EXIT_FAILURE;
+		exit_error();
 	if (argv[0] == '\0')
-		EXIT_FAILURE;
+		exit_error();
 	return (1);
 }
 
