@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:21:24 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 04:27:19 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:05:24 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	validate_args(int argc, char **argv)
 	{
 		if (is_integer(argv[i]) == 0)
 		{
+			printf("HELLO\n");
 			exit_error();
 			return (-1);
 		}
@@ -41,10 +42,7 @@ void	check_duplicates(int argc, int *num)
 		while (j < argc)
 		{
 			if (num[i] == num[j])
-			{
-				ft_putstr_fd("	INPUT WITH DUPLICATION!\n", 1);
 				exit_error();
-			}
 			j++;
 		}
 		i++;
