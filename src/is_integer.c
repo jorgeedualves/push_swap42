@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:39:47 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/13 12:21:52 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 04:39:11 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,48 @@
 static int	check_is_digit(char *argv)
 {
 	if (argv[0] == '-' && !ft_isdigit(argv[1]))
-		return (false);
+		return (-1);
 	if (argv[0] == '-' && argv[1] == '\0')
-		return (false);
+		return (-1);
 	if (argv[0] != '-' && !ft_isdigit(argv[0]))
-		return (false);
+		return (-1);
 	if (argv[0] == '\0')
-		return (false);
-	return (true);
+		return (-1);
+	return (0);
 }
 
-static int	check_is_negative(char *argv, bool *negative, int i)
+static int	check_is_negative(char *argv, int *negative, int i)
 {
 	if (argv[i] == '-')
 	{
-		*negative = true;
+		*negative = 1;
 		i++;
 	}
 	else
-		*negative = false;
+		*negative = -1;
 	return (i);
 }
 
-int is_integer(char *argv)
+int	is_integer(char *argv)
 {
 	int		i;
 	long	num;
-	bool	negative;
+	int		negative;
 
-	if(!check_is_digit(argv))
-		return (false);
+	if (!check_is_digit(argv))
+		return (-1);
 	i = check_is_negative (argv, &negative, 0);
 	num = 0;
 	while (argv[i] != '\0')
 	{
-		if(!ft_isdigit(argv[i]))
-			return (false);
+		if (!ft_isdigit(argv[i]))
+			return (-1);
 		num = num * 10 + argv[i] - '0';
-		if (negative == true && - num < INT_MIN)
-			return (false);
-		if (negative == false && num > INT_MAX)
-			return (false);
+		if (negative == 1 && - num < INT_MIN)
+			return (-1);
+		if (negative == -1 && num > INT_MAX)
+			return (-1);
 		i++;
 	}
-	return (true);
+	return (1);
 }

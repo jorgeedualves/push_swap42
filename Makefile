@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/12/13 12:43:09 by joeduard         ###   ########.fr        #
+#    Updated: 2021/12/14 04:17:17 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ HEADERS := $(INCLUDES)/push_swap.h
 INCLUDES := $(addprefix -I, $(INCLUDES))
 
 
-SRC_FILES = actions.c check_args.c do_print_actions.c exit.c ft_itob.c \
-			is_integer.c ps_lst.c push_swap_long.c push_swap_short.c push_swap.c \
-			quick_sort.c sort_stack.c stack_operations.c \
+SRC_FILES = actions.c check_args.c exit.c ft_itob.c is_integer.c \
+			ps_lst.c push_swap_long.c push_swap_short.c push_swap.c \
+			quick_sort.c \
 			
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -56,7 +56,7 @@ $(OBJ_DIR):
 	mkdir -p obj
 
 run: all
-	$(VALGRIND) ./$(NAME) 1 2 3 4 5
+	$(VALGRIND) ./$(NAME) 5 4 3
 
 clean:
 	make -C $(LIBFT_DIR) fclean
