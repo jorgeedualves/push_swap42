@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:23:21 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 04:52:14 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:17:31 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int	main(int argc, char **argv)
 	int			*index;
 	char		**bin;
 
+	if (argc == 1)
+		exit(0);
 	argc--;
 	argv++;
 	num = malloc(sizeof(int) * argc);
 	if (!num)
-		exit(EXIT_FAILURE);
+		exit_error();
 	validate_args(argc, argv);
 	transform_args(argc, argv, num);
 	check_duplicates(argc, num);

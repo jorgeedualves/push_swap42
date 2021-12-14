@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:21:24 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 18:15:44 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:50:18 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	validate_args(int argc, char **argv)
 {
 	int	i;
-
+	
 	i = 0;
+	if (argc == 1)
+		return (0);
 	while (i < argc)
 	{
 		if (is_integer(argv[i]) == 0)
@@ -69,7 +71,6 @@ void	array_is_sorted(int len, int *num)
 		i++;
 	if (i == len - 1)
 	{
-		ft_putstr_fd("	STACK IS ORDERED!\n", 1);
 		exit(EXIT_SUCCESS);
 	}
 }

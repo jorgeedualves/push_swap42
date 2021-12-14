@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:39:47 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 18:15:12 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:20:01 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	is_integer(char *argv)
 	negative = -1;
 	i = 0;
 	if (!check_is_digit(argv))
-		return (-1);
+		return (0);
 	i = check_is_negative(argv, &negative, 0);
 	num = 0;
 	while (argv[i] != '\0')
