@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:21:24 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 18:50:18 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:58:45 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	validate_args(int argc, char **argv)
 {
 	int	i;
-	
+
 	i = 0;
 	if (argc == 1)
 		return (0);

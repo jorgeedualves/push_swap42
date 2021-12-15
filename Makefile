@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2021/12/14 14:56:39 by joeduard         ###   ########.fr        #
+#    Updated: 2021/12/14 22:01:36 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INCLUDES := $(addprefix -I, $(INCLUDES))
 
 
 SRC_FILES = actions.c check_args.c exit.c ft_itob.c is_integer.c \
-			ps_lst.c push_swap_long.c push_swap_short.c push_swap.c \
+			ps_lst.c push_swap_long.c push_swap_short.c push_swap_short2.c push_swap.c \
 			quick_sort.c \
 			
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))

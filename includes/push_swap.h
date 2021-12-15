@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 17:21:52 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/12/14 22:07:51 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ int		*link_index(int len, int *num);
 void	push_swap(t_stacks *stacks, int *index);
 void	short_push_swap(t_stacks *stacks, int *index);
 void	long_push_swap(t_stacks *stacks);
+int		pos_0_greater_pos_1(int pos_0, int pos_1, int pos_2, t_stacks *stack);
+int		pos_0_lower_pos_1(int pos_0, int pos_2, t_stacks *stack);
 
 #endif
