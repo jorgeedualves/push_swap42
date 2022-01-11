@@ -6,65 +6,63 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 12:25:31 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 05:07:05 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 00:22:52 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	find_limit(int len)
+int	find_limit(int len_argc)
 {
 	int	limit;
 
 	limit = 0;
-	while ((len / 2) != 0)
+	while ((len_argc / 2) != 0)
 	{
 		limit++;
-		len = len / 2;
+		len_argc = len_argc / 2;
 	}
 	return (limit);
 }
 
-char	*ft_itob(int len, int num)
+char	*ft_itob(int len_argc, int index)
 {
-	int		limit_cont;
 	int		digit;
 	int		i;
-	char	*pointer;
+	char	*str_bin;
 	int		limit;
 
-	limit = find_limit(len);
+	limit = find_limit(len_argc);
 	i = 0;
-	pointer = (char *)malloc((sizeof(char *) * limit) + 1);
-	if (pointer == NULL)
+	str_bin = (char *)malloc((sizeof(char *) * limit) + 1);
+	if (str_bin == NULL)
 		exit(EXIT_FAILURE);
-	limit_cont = limit;
-	while (limit_cont >= 0)
+	while (limit >= 0)
 	{
-		digit = num >> limit_cont;
+		digit = index >> limit;
 		if (digit & 1)
-			*(pointer + i) = 1 + '0';
+			*(str_bin + i) = 1 + '0';
 		else
-			*(pointer + i) = 0 + '0';
+			*(str_bin + i) = 0 + '0';
 		i++;
-		limit_cont--;
+		limit--;
 	}
-	*(pointer + i) = '\0';
-	return (pointer);
+	*(str_bin + i) = '\0';
+	return (str_bin);
 }
 
-char	**string_bin(int len, int *num)
+char	**string_bin(int argc, int *index)
 {
 	int		i;
 	char	**string_bin;
 
-	string_bin = (char **)malloc((sizeof(char **) * len) + 1);
+	string_bin = (char **)malloc((sizeof(char **) * argc) + 1);
 	if (string_bin == NULL)
 		exit(EXIT_FAILURE);
 	i = 0;
-	while (i < len)
+	while (i < argc)
 	{
-		string_bin[i] = ft_itob(len, num[i]);
+		string_bin[i] = ft_itob(argc, index[i]);
 		i++;
 	}
 	return (string_bin);
