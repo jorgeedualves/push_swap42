@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 00:10:03 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:20:59 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,12 @@ void	array_is_sorted(int argc, int *num);
 void	transform_args(int argc, char **argv, int *num);
 
 void	init_struct(t_stacks *stacks, int argc);
-void	fill_stack_a(t_stacks *stacks, char **bin, int *index);
+void	fill_stack_a(t_stacks *stack, char **bin, int *index);
 
-t_stack	*ps_lstnew(char *bin, int index);
-void	ps_lstadd_back(t_stack **lst, t_stack *next);
+t_stack	*ps_listnew(char *bin, int index);
+void	ps_listadd_back(t_stack **lst, t_stack *next);
 t_stack	*ps_lstlast(t_stack *lst);
-void	ps_lstdelone(t_stack *lst, void (*del)(void *));
-t_stack	*ps_lstprevlast(t_stack *lst);
-void	ps_lstadd_front(t_stack **lst, t_stack *new);
-
-void	ps_lstclear(t_stack **lst);
+void	ps_listclear(t_stack **lst);
 void	freeing(t_stacks *stacks, int *num, int *index, char **bin);
 void	exit_error(void);
 
@@ -67,7 +63,7 @@ void	swap(t_stacks *stack);
 void	rotate(t_stacks *stack);
 void	reverse_rotate(t_stacks *stack);
 
-int		*quick_sort(int len, int *num);
+
 int		*get_index(int len, int *num, int *cpy);
 int		*link_index(int len, int *num);
 
