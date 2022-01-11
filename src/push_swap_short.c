@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:22:18 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 16:37:17 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 17:59:12 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	three_numbers(t_stacks *stack)
 
 static int	sort_four_or_five(t_stacks *stack, int *index)
 {
-	if (index[5] == 0)
+	if (index[5] == 0 && stack->len == 5)
 		reverse_rotate(stack);
 	while (stack->stack_a->index != 0)
 		rotate(stack);

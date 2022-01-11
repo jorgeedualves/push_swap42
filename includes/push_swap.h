@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 16:46:29 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:54:08 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	push_b(t_stacks *stack);
 void	swap(t_stacks *stack);
 void	rotate(t_stacks *stack);
 void	reverse_rotate(t_stacks *stack);
-
-
 int		*get_index(int len, int *num, int *cpy);
 int		*link_index(int len, int *num);
 
