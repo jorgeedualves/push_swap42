@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:22:18 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 22:02:45 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:37:17 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,4 @@ void	short_push_swap(t_stacks *stack, int *index)
 	}
 	else if (stack->len > 3)
 		sort_four_or_five(stack, index);
-	(void) index;
 }
