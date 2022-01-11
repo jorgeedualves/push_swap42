@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:12:58 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 04:26:12 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 00:13:15 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ void	swap(t_stacks *stack)
 
 	if (stack->stack_a)
 	{
-		temp_a = stack->stack_a->data;
-		temp_b = stack->stack_a->next->data;
-		stack->stack_a->data = temp_b;
-		stack->stack_a->next->data = temp_a;
+		temp_a = stack->stack_a->index_bin;
+		temp_b = stack->stack_a->next->index_bin;
+		stack->stack_a->index_bin = temp_b;
+		stack->stack_a->next->index_bin = temp_a;
 		ft_putstr_fd("sa\n", 1);
 	}
 }
