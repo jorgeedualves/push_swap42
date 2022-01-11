@@ -6,77 +6,77 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:24:19 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 05:08:12 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/10 23:59:58 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	*cpy_vector(int len, int *num)
+static int	*cpy_vector(int argc, int *array_num)
 {
-	int	*cpy;
+	int	*array_cpy;
 	int	i;
 
-	cpy = malloc((sizeof(int) * len) + 1);
-	if (!cpy)
+	array_cpy = malloc((sizeof(int) * argc) + 1);
+	if (!array_cpy)
 		exit(EXIT_FAILURE);
 	i = 0;
-	while (i < len)
+	while (i < argc)
 	{
-		cpy[i] = num[i];
+		array_cpy[i] = array_num[i];
 		i++;
 	}
-	return (cpy);
+	return (array_cpy);
 }
 
-int	*quick_sort(int len, int *num)
+int	*quick_sort(int argc, int *array_num)
 {
-	int	*cpy;
+	int	*array_cpy;
 	int	aux;
 	int	i;
 
-	cpy = cpy_vector(len, num);
+	array_cpy = cpy_vector(argc, array_num);
 	i = 0;
-	while (i < len - 1)
+	while (i < argc - 1)
 	{
-		if (cpy[i] > cpy[i + 1])
+		if (array_cpy[i] > array_cpy[i + 1])
 		{
-			aux = cpy[i];
-			cpy[i] = cpy[i + 1];
-			cpy[i + 1] = aux;
+			aux = array_cpy[i];
+			array_cpy[i] = array_cpy[i + 1];
+			array_cpy[i + 1] = aux;
 			i = -1;
 		}
 		i++;
 	}
-	return (cpy);
+	return (array_cpy);
 }
 
 int	*get_index(int len, int *num, int *cpy)
 {
-	int	*index;
+	int	*array_index;
 	int	i;
 	int	j;
 
-	index = cpy_vector(len, num);
+	array_index = cpy_vector(len, num);
 	i = 0;
 	while (i < len)
 	{
 		j = 0;
-		while (index[i] != cpy[j])
+		while (array_index[i] != cpy[j])
 			j++;
-		index[i] = j;
+		array_index[i] = j;
 		i++;
 	}
-	return (index);
+	return (array_index);
 }
 
-int	*link_index(int len, int *num)
+int	*link_index(int argc, int *array_num)
 {
-	int	*cpy;
-	int	*index;
+	int	*array_cpy;
+	int	*array_index;
 
-	cpy = quick_sort(len, num);
-	index = get_index(len, num, cpy);
-	free(cpy);
-	return (index);
+	array_cpy = quick_sort(argc, array_num);
+	array_index = get_index(argc, array_num, array_cpy);
+	free(array_cpy);
+	return (array_index);
 }
