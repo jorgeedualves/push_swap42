@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 13:49:46 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 12:20:59 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:46:29 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	transform_args(int argc, char **argv, int *num);
 void	init_struct(t_stacks *stacks, int argc);
 void	fill_stack_a(t_stacks *stack, char **bin, int *index);
 
-t_stack	*ps_listnew(char *bin, int index);
-void	ps_listadd_back(t_stack **lst, t_stack *next);
-t_stack	*ps_lstlast(t_stack *lst);
-void	ps_listclear(t_stack **lst);
+t_stack	*list_new(char *bin, int index);
+void	list_add_back(t_stack **lst, t_stack *next);
+t_stack	*list_last(t_stack *lst);
+void	list_clear(t_stack **lst);
 void	freeing(t_stacks *stacks, int *num, int *index, char **bin);
 void	exit_error(void);
 

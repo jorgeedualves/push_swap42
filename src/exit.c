@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:20:44 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 12:16:11 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:47:31 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	freeing(t_stacks *stacks, int *num, int *index, char **bin)
 	index = NULL;
 	free(num);
 	num = NULL;
-	ps_listclear (&stacks->stack_a);
-	ps_listclear (&stacks->stack_b);
+	list_clear (&stacks->stack_a);
+	list_clear (&stacks->stack_b);
 	i = 0;
 	while (i < stacks->len)
 	{
@@ -37,7 +37,7 @@ void	freeing(t_stacks *stacks, int *num, int *index, char **bin)
 	free(bin);
 }
 
-void	ps_listclear(t_stack **lst)
+void	list_clear(t_stack **lst)
 {
 	t_stack	*aux;
 	t_stack	*temp;

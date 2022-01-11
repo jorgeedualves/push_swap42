@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:23:21 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 12:17:27 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:48:13 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ void	fill_stack_a(t_stacks *stack, char **bin, int *index)
 	if (stack->len)
 	{
 		i = 0;
-		stack->stack_a = ps_listnew(bin[i], index[i]);
+		stack->stack_a = list_new(bin[i], index[i]);
 		while (i < stack->len - 1)
 		{
 			i++;
-			ps_listadd_back(&stack->stack_a, ps_listnew(bin[i], index[i]));
+			list_add_back(&stack->stack_a, list_new(bin[i], index[i]));
 		}
 	}
 }
