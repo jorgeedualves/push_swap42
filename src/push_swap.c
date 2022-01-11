@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:23:21 by joeduard          #+#    #+#             */
-/*   Updated: 2021/12/14 19:17:31 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/10 23:39:20 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
-	int			*num;
+	int			*array_num;
 	int			*index;
 	char		**bin;
 
@@ -23,19 +23,19 @@ int	main(int argc, char **argv)
 		exit(0);
 	argc--;
 	argv++;
-	num = malloc(sizeof(int) * argc);
-	if (!num)
+	array_num = malloc(sizeof(int) * argc);
+	if (!array_num)
 		exit_error();
 	validate_args(argc, argv);
-	transform_args(argc, argv, num);
-	check_duplicates(argc, num);
-	array_is_sorted(argc, num);
-	index = link_index(argc, num);
+	transform_args(argc, argv, array_num);
+	check_duplicates(argc, array_num);
+	array_is_sorted(argc, array_num);
+	index = link_index(argc, array_num);
 	bin = string_bin(argc, index);
 	init_struct(&stacks, argc);
 	fill_stack_a(&stacks, bin, index);
 	push_swap(&stacks, index);
-	freeing(&stacks, num, index, bin);
+	freeing(&stacks, array_num, index, bin);
 	return (0);
 }
 
