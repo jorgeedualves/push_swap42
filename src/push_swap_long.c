@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:22:10 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/11 00:13:55 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/11 22:22:32 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	long_push_swap(t_stacks *stack)
 	while (stack->limit >= 0)
 	{
 		while (i < stack->len)
-		{
+		{			
 			if (stack->stack_a->index_bin[stack->limit] == '0')
 				push_b(stack);
 			else

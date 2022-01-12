@@ -6,7 +6,7 @@
 #    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 20:25:25 by joeduard          #+#    #+#              #
-#    Updated: 2022/01/10 23:06:12 by joeduard         ###   ########.fr        #
+#    Updated: 2022/01/11 22:13:29 by joeduard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,19 +41,19 @@ all: $(NAME)
 
 bonus: all
 
-$(NAME): $(LIBFT) $(OBJ)
+$(NAME): $(OBJ_DIR) $(LIBFT) $(OBJ)
 	@echo "\033[32mBuilding the executable file...\033[0m"
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFLAGS) -o $@
 	@echo "\033[32mDone!\033[0m"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) 
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 $(OBJ_DIR):
-	mkdir -p obj
+	mkdir $(OBJ_DIR)
 
 run: all
 	$(VALGRIND) ./$(NAME) 100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 78 77 76 75 74 73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 2 1 0 -2 -1 | wc - l
