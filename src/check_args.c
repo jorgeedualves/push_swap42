@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:21:24 by joeduard          #+#    #+#             */
-/*   Updated: 2022/01/10 23:47:57 by joeduard         ###   ########.fr       */
+/*   Updated: 2022/01/12 20:01:59 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	validate_args(int argc, char **argv)
 	int	i;
 
 	i = 0;
-	if (argc == 1)
-		return (0);
 	while (i < argc)
 	{
 		if (is_integer(argv[i]) == 0)
