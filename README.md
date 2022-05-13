@@ -7,6 +7,19 @@ Sort the received integer arguments in order to sort them using 2 stacks "A" and
 is a stack with values ​​sorted from smallest to largest.  For this, classification algorithms will be used in order to obtain the smallest number of
 possible instructions. <br/>
 
+## Badge
+<img src="push_swap.png">
+
+## Skills
+- Unix
+- Imperative programming
+- Rigor
+- Algorithms & AI 
+
+## My grade
+<img src="score_push_swap">
+
+
 🚧 project:<br/>
 ```
 push_swap42 $ make
