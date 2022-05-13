@@ -17,7 +17,7 @@ possible instructions. <br/>
 - Algorithms & AI 
 
 ## My grade
-<img src="score_push_swap">
+<img src="score_push_swap.png">
 
 
 🚧 project:<br/>
